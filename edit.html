@@ -1,4 +1,4 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="en">
   <head>
     <!-- Required meta tags -->
@@ -16,6 +16,16 @@
     <!-- Remix Icon -->
     <link href="https://cdn.jsdelivr.net/npm/remixicon@2.2.0/fonts/remixicon.css" rel="stylesheet" />
 
+    <!-- Date PIcker -->
+    <link rel="stylesheet" href="//code.jquery.com/ui/1.13.0/themes/base/jquery-ui.css" />
+    <link rel="stylesheet" href="/resources/demos/style.css" />
+    <script src="https://code.jquery.com/jquery-3.6.0.js"></script>
+    <script src="https://code.jquery.com/ui/1.13.0/jquery-ui.js"></script>
+    <script>
+      $(function () {
+        $("#datepicker").datepicker();
+      });
+    </script>
     <title>Data Mahasiswa TI</title>
   </head>
   <body>
@@ -33,38 +43,49 @@
       </div>
     </nav>
 
-    <div class="container">
-      <h3 class="text-center mt-3 mb-4">Edit Data Mahasiswa Teknik Informatika</h3>
-      <form action="" method="post">
-        <div class="form-group">
-          <label>Nama</label>
-          <input name="nama" type="text" class="form-control" placeholder="Nama Lengkap" />
-        </div>
-        <div class="form-group">
-          <label>NPM</label>
-          <input type="text" class="form-control" placeholder="NPM" />
-        </div>
-        <div class="form-group">
-          <label>Alamat</label>
-          <input name="npm" type="text" class="form-control" placeholder="Alamat" />
-        </div>
-        <div class="form-row">
-          <div class="form-group col-md-6">
-            <label>Jenis Kelamin</label>
-            <input name="jenis" type="text" class="form-control" placeholder="L/P" />
+  <div div class="container" style="width: 40rem;">
+    <div class="card shadow">
+      <div class="card-body">
+        <h4 class="card-title text-center mb-4">Edit Data Mahasiswa</h4>
+        <form action="" method="post">
+          <div class="form-row">
+            <div class="form-group col-md-6">
+              <label>Nama</label>
+              <input name="nama" type="text" class="form-control" placeholder="Nama Lengkap" autocomplete="off">
+            </div>
+            <div class="form-group col-md-6">
+              <label>NPM</label>
+              <input type="text" class="form-control" placeholder="NPM" autocomplete="off">
+            </div>
           </div>
-          <div class="form-group col-md-4">
-            <label>Tempat, tanggal lahir</label>
-            <input name="ttl" type="text" class="form-control" placeholder="TTL" />
+          <div class="form-row">
+            <div class="form-group col-md-6">
+              <label>Alamat</label>
+              <input name="npm" type="text" class="form-control" placeholder="Alamat" autocomplete="off">
+            </div>
+            <div class="form-group col-md-6">
+              <label>Jenis Kelamin</label>
+              <select class="form-control">
+                <option disabled selected> - Pilih Jenis Kelamin - </option>
+                <option value="L">Laki - Laki</option>
+                <option value="P">Perempuan</option>
+              </select>
+            </div>
           </div>
-        </div>
-        <button type="submit" class="btn btn-primary">Simpan</button>
-      </form>
+          <div class="form-group">
+            <label>Tanggal Lahir</label>
+            <input name="ttl" type="text" class="form-control" id="datepicker" placeholder="22/10/2000" autocomplete="off">
+          </div>
+          <a href="index.html"><button type="button" class="btn btn-danger">Batal</button></a>
+          <button type="submit" class="btn btn-primary">Simpan</button>
+        </form>
+      </div>
     </div>
+  </div>
 
     <!-- Optional JavaScript -->
     <!-- jQuery first, then Popper.js, then Bootstrap JS -->
-    <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
+    <!-- <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script> -->
     <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.3/umd/popper.min.js" integrity="sha384-ZMP7rVo3mIykV+2+9J3UJ46jBk0WLaUAdn689aCwoqbBJiSnjAK/l8WvCWPIPm49" crossorigin="anonymous"></script>
     <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/js/bootstrap.min.js" integrity="sha384-ChfqqxuZUCnJSK3+MXmPNIyE6ZbWh2IMqE241rYiqJxyMiZ6OW/JmZQ5stwEULTy" crossorigin="anonymous"></script>
   </body>
