@@ -19,15 +19,19 @@
     <title>Data Mahasiswa TI</title>
   </head>
   <body>
+    <?php
+      include('config.php');
+      $data = mysqli_query($mysqli, "SELECT * FROM jurusan");
+    ?>
     <nav class="navbar navbar-expand-lg navbar-dark bg-primary mb-4">
       <div class="container">
-        <a class="navbar-brand" href="index.html" style="font-family: 'Viga', sans-serif">Institut Teknologi Adhi Tama Surabaya</a>
+        <a class="navbar-brand" href="index.php" style="font-family: 'Viga', sans-serif">Institut Teknologi Adhi Tama Surabaya</a>
         <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNavAltMarkup" aria-controls="navbarNavAltMarkup" aria-expanded="false" aria-label="Toggle navigation">
           <span class="navbar-toggler-icon"></span>
         </button>
         <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
           <div class="navbar-nav ml-auto">
-            <a class="nav-item nav-link active mr-4" href="index.html"><i class="ri-home-4-line"></i></i></a>
+            <a class="nav-item nav-link active mr-4" href="index.php"><i class="ri-home-4-line"></i></i></a>
           </div>
         </div>
       </div>
@@ -35,40 +39,36 @@
 
     <div class="container">
         <div class="row mt-3 mb-4">
-            <div class="col-9">
-                <h4>Daftar Mahasiswa ITATS</h4>
+            <div class="col-10">
+                <h4>Daftar Jurusan ITATS</h4>
             </div>
             <div class="col mr-auto">
-                <a href="tambahmhs.html"><button type="button" class="btn btn-success">Tambah Mahasiswa</button></a>
+                <a href="tambahjurusan.php"><button type="button" class="btn btn-success">Tambah Jurusan</button></a>
             </div>
         </div>
         <table class="table table-striped">
             <thead>
               <tr>
                 <th scope="col">No</th>
-                <th scope="col">Nama Mahasiswa</th>
-                <th scope="col">NPM</th>
-                <th scope="col">Alamat</th>
-                <th scope="col">No.Telp</th>
-                <th scope="col">Tgl Lahir</th>
-                <th scope="col">Jurusan</th>
+                <th scope="col">Nama Jurusan</th>
+                <th scope="col">Kelas</th>
                 <th scope="col">Aksi</th>
               </tr>
             </thead>
             <tbody>
+              <?php 
+              $n = 1;
+              while($hasil = mysqli_fetch_array($data)){?>
               <tr>
-                <th scope="row">1</th>
-                <td>Bambang</td>
-                <td>09.2021.1.00962</td>
-                <td>Jl.Panglima Sudirman 76 Surabaya</td>
-                <td>085664239985</td>
-                <td>25 Mei 1999</td>
-                <td>Teknik Informatika</td>
+                <th scope="row"><?= +$n?></th>
+                <td><?= $hasil['namajur']?></td>
+                <td><?= $hasil['kelas']?></td>
                 <td>
-                  <a href="editmhs.html"><span class="badge badge-warning">Edit</span></a>
-                  <a href=""><span type="button" class="badge badge-danger">Hapus</span></a>
+                  <a href="editjurusan.php?id=<?= $hasil['id_jurusan']?>"><span class="badge badge-warning">Edit</span></a>
+                  <a href="hapus.php?hal=jurusan&&id=<?= $hasil['id_jurusan']?>"><span type="button" class="badge badge-danger">Hapus</span></a>
                 </td>
               </tr>
+              <?php }?>
             </tbody>
           </table>
     </div>

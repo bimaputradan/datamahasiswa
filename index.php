@@ -21,48 +21,40 @@
   <body>
     <nav class="navbar navbar-expand-lg navbar-dark bg-primary mb-4">
       <div class="container">
-        <a class="navbar-brand" href="index.html" style="font-family: 'Viga', sans-serif">Institut Teknologi Adhi Tama Surabaya</a>
+        <a class="navbar-brand" href="index.php" style="font-family: 'Viga', sans-serif">Institut Teknologi Adhi Tama Surabaya</a>
         <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNavAltMarkup" aria-controls="navbarNavAltMarkup" aria-expanded="false" aria-label="Toggle navigation">
           <span class="navbar-toggler-icon"></span>
         </button>
         <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
           <div class="navbar-nav ml-auto">
-            <a class="nav-item nav-link active mr-4" href="index.html"><i class="ri-home-4-line"></i></i></a>
+            <a class="nav-item nav-link active mr-4" href="index.php"><i class="ri-home-4-line"></i></i></a>
           </div>
         </div>
       </div>
     </nav>
-
     <div class="container">
-        <div class="row mt-3 mb-4">
-            <div class="col-10">
-                <h4>Daftar Jurusan ITATS</h4>
+      <div class="row">
+        <div class="col">
+          <div class="card">
+            <div class="card-body">
+              <h5 class="card-title text-center">Mahasiswa</h5>
+              <img src="assets/mahasiswa.png" class="card-img-top" alt="">
+              <p class="card-text">Daftar Mahasiswa Institut Teknologi Adhi Tama Surabaya</p>
+              <a href="mahasiswa.php" class="card-link">Tampilkan Data</a>
             </div>
-            <div class="col mr-auto">
-                <a href="tambahjurusan.html"><button type="button" class="btn btn-success">Tambah Jurusan</button></a>
-            </div>
+          </div>
         </div>
-        <table class="table table-striped">
-            <thead>
-              <tr>
-                <th scope="col">No</th>
-                <th scope="col">Nama Jurusan</th>
-                <th scope="col">Kelas</th>
-                <th scope="col">Aksi</th>
-              </tr>
-            </thead>
-            <tbody>
-              <tr>
-                <th scope="row">1</th>
-                <td>Sistem Informasi</td>
-                <td>Malam</td>
-                <td>
-                  <a href="editjurusan.html"><span class="badge badge-warning">Edit</span></a>
-                  <a href=""><span type="button" class="badge badge-danger">Hapus</span></a>
-                </td>
-              </tr>
-            </tbody>
-          </table>
+        <div class="col">
+          <div class="card">
+            <div class="card-body">
+              <h5 class="card-title text-center">Jurusan</h5>
+              <img src="assets/jurusan.png" class="card-img-top" alt="" style="width: 97%;">
+              <p class="card-text">Daftar Jurusan Institut Teknologi Adhi Tama Surabaya</p>
+              <a href="jurusan.php" class="card-link">Tampilkan Data</a>
+            </div>
+          </div>
+        </div>
+      </div>
     </div>
 
     <!-- Optional JavaScript -->

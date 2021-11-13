@@ -31,13 +31,13 @@
   <body>
     <nav class="navbar navbar-expand-lg navbar-dark bg-primary mb-4">
       <div class="container">
-        <a class="navbar-brand" href="index.html" style="font-family: 'Viga', sans-serif">Institut Teknologi Adhi Tama Surabaya</a>
+        <a class="navbar-brand" href="index.php" style="font-family: 'Viga', sans-serif">Institut Teknologi Adhi Tama Surabaya</a>
         <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNavAltMarkup" aria-controls="navbarNavAltMarkup" aria-expanded="false" aria-label="Toggle navigation">
           <span class="navbar-toggler-icon"></span>
         </button>
         <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
           <div class="navbar-nav ml-auto">
-            <a class="nav-item nav-link active mr-4" href="index.html"><i class="ri-home-4-line"></i></i></a>
+            <a class="nav-item nav-link active mr-4" href="index.php"><i class="ri-home-4-line"></i></i></a>
           </div>
         </div>
       </div>
@@ -46,7 +46,7 @@
   <div div class="container" style="width: 40rem;">
     <div class="card shadow">
       <div class="card-body">
-        <h4 class="card-title text-center mb-4">Tambah Data Mahasiswa</h4>
+        <h4 class="card-title text-center mb-4">Edit Data Mahasiswa</h4>
         <form action="" method="post">
           <div class="form-row">
             <div class="form-group col-md-6">
@@ -72,21 +72,11 @@
               </select>
             </div>
           </div>
-          <div class="form-row">
-            <div class="form-group col-md-6">
-              <label>Tanggal Lahir</label>
-              <input name="ttl" type="text" class="form-control" id="datepicker" placeholder="22/10/2000" autocomplete="off">
-            </div>
-            <div class="form-group col-md-6">
-              <label>Jurusan</label>
-              <select class="form-control">
-                <option disabled selected> - Pilih Jurusan dan Kelas - </option>
-                <option value="L">Laki - Laki</option>
-                <option value="P">Perempuan</option>
-              </select>
-            </div>
+          <div class="form-group">
+            <label>Tanggal Lahir</label>
+            <input name="ttl" type="text" class="form-control" id="datepicker" placeholder="22/10/2000" autocomplete="off">
           </div>
-          <a href="mahasiswa.html"><button type="button" class="btn btn-danger">Batal</button></a>
+          <a href="mahasiswa.php"><button type="button" class="btn btn-danger">Batal</button></a>
           <button type="submit" class="btn btn-primary">Simpan</button>
         </form>
       </div>

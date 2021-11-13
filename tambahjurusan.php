@@ -31,13 +31,13 @@
   <body>
     <nav class="navbar navbar-expand-lg navbar-dark bg-primary mb-4">
       <div class="container">
-        <a class="navbar-brand" href="index.html" style="font-family: 'Viga', sans-serif">Institut Teknologi Adhi Tama Surabaya</a>
+        <a class="navbar-brand" href="index.php" style="font-family: 'Viga', sans-serif">Institut Teknologi Adhi Tama Surabaya</a>
         <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNavAltMarkup" aria-controls="navbarNavAltMarkup" aria-expanded="false" aria-label="Toggle navigation">
           <span class="navbar-toggler-icon"></span>
         </button>
         <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
           <div class="navbar-nav ml-auto">
-            <a class="nav-item nav-link active mr-4" href="index.html"><i class="ri-home-4-line"></i></i></a>
+            <a class="nav-item nav-link active mr-4" href="index.php"><i class="ri-home-4-line"></i></i></a>
           </div>
         </div>
       </div>
@@ -46,27 +46,40 @@
   <div div class="container" style="width: 40rem;">
     <div class="card shadow">
       <div class="card-body">
-        <h4 class="card-title text-center mb-4">Edit Data Jurusan</h4>
-        <form action="" method="post">
+        <h4 class="card-title text-center mb-4">Tambah Data Jurusan</h4>
+        <form action="tambahjurusan.php" method="post">
           <div class="form-row">
             <div class="form-group col-md-6">
               <label>Nama Jurusan</label>
-              <input name="nama" type="text" class="form-control" autocomplete="OFF">
+              <input name="nama" type="text" class="form-control" autocomplete="OFF" placeholder="Teknik Informatika">
             </div>
             <div class="form-group col-md-6">
                 <label for="inputState">Kelas</label>
-                <select id="inputState" class="form-control">
-                  <option selected>Pagi</option>
-                  <option>Malam</option>
+                <select name="kelas" class="form-control">
+                  <option disabled selected>- Pilih Kelas -</option>
+                  <option value="Pagi">Pagi</option>
+                  <option value="Malam">Malam</option>
                 </select>
             </div>
-        </div>
-          <a href="jurusan.html"><button type="button" class="btn btn-danger">Batal</button></a>
-          <button type="submit" class="btn btn-primary">Simpan</button>
+          </div>
+          <a href="jurusan.php"><button type="button" class="btn btn-danger">Batal</button></a>
+          <button type="submit" class="btn btn-primary" name="tombol">Simpan</button>
         </form>
       </div>
     </div>
   </div>
+  <?php
+    if(isset($_POST['tombol'])){
+      $nama = $_POST['nama'];
+      $kelas = $_POST['kelas'];
+      if(empty($nama) ||empty($nama)){} else {
+        include_once("config.php");              
+        $result = mysqli_query($mysqli, "INSERT INTO jurusan(namajur,kelas) VALUES('$nama','$kelas')");
+      }
+
+      header('location: jurusan.php');
+    }
+  ?>
 
     <!-- Optional JavaScript -->
     <!-- jQuery first, then Popper.js, then Bootstrap JS -->
