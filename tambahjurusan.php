@@ -72,12 +72,13 @@
     if(isset($_POST['tombol'])){
       $nama = $_POST['nama'];
       $kelas = $_POST['kelas'];
-      if(empty($nama) ||empty($nama)){} else {
+      if(empty($nama) ||empty($kelas)){
+        echo "<script>alert('Isilah Form Dengan Benar'); window.location = 'tambahjurusan.php';</script>";
+      } else {
         include_once("config.php");              
         $result = mysqli_query($mysqli, "INSERT INTO jurusan(namajur,kelas) VALUES('$nama','$kelas')");
+        echo "<script>alert('Data Berhasil Di Tambahkan'); window.location = 'jurusan.php';</script>";
       }
-
-      header('location: jurusan.php');
     }
   ?>
 

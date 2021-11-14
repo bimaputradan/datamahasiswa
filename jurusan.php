@@ -60,7 +60,7 @@
               $n = 1;
               while($hasil = mysqli_fetch_array($data)){?>
               <tr>
-                <th scope="row"><?= +$n?></th>
+                <th scope="row"><?= $n++?></th>
                 <td><?= $hasil['namajur']?></td>
                 <td><?= $hasil['kelas']?></td>
                 <td>

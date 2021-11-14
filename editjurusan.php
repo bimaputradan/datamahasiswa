@@ -84,11 +84,13 @@
       $kelas = $_POST['kelas'];
       $idnya = $_POST['id'];
 
-      if(empty($nama) ||empty($nama)){} else {
+      if(empty($nama) ||empty($nama)){
+        echo "<script>alert('Isilah Form Dengan Benar'); window.location = 'jurusan.php';</script>";
+      } else {
         include_once("config.php");              
-        $result = mysqli_query($mysqli, "UPDATE jurusan SET namajur='$nama',kelas='$kelas' WHERE id_jurusan=$idnya");      }
-
-      header('location: jurusan.php');
+        $result = mysqli_query($mysqli, "UPDATE jurusan SET namajur='$nama',kelas='$kelas' WHERE id_jurusan=$idnya");
+        echo "<script>alert('Data Berhasil Di Ubah'); window.location = 'jurusan.php';</script>";
+      }
     }
   ?>
     <!-- Optional JavaScript -->
